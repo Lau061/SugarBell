@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecontato.css">
+</head>
+    
+    <body>
+        <header><img src="Group 1.png" alt="" width="100%"></header>
+        <div class="banner">
+            <h2>O que podemos fazer por você?</h2>
+            <main>
+                <section class="contact-section">
+                    <div class="contact-left">
+  
+                        <p>A sua opinião faz toda diferença para continuarmos aprimorando a qualidade dos nossos produtos e do nosso atendimento.</p>
+                        <button class="contact-btn" id="contact-btn">Envie sua mensagem</button>
+                        <div id="contact-form" class="form-container">
+                            <form>
+                                <input type="text" placeholder="Nome" required>
+                                <input type="tel" placeholder="Telefone">
+                                <input type="email" placeholder="E-mail" required>
+                                <textarea placeholder="Mensagem" required></textarea>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="contact-right">
+                        <p>Deseja fazer um pedido?</p>
+                        <button class="order-btn" id="order-btn">Quero fazer meu pedido!</button>
+                        <div id="order-form" class="form-container">
+                            <form>
+                                <select required>
+                                    <option value="">Selecione seu pedido</option>
+                                    <option value="pedido1">Cheese Cake</option>
+                                    <option value="pedido2">Hamburguer de Aveia</option>
+                                    <option value="pedido1">NY Roll Pistache</option>
+                                    <option value="pedido2">Shake Star Rail</option>
+                                </select>
+                                <input type="text" placeholder="Nome" required>
+                                <input type="tel" placeholder="Telefone" required>
+                                <input type="email" placeholder="E-mail" required>
+                                <input type="text" placeholder="Endereço" required>
+                                <textarea placeholder="Observações"></textarea>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                        <div id="order-success" class="success-message">
+                            <p>Seu pedido foi enviado com sucesso! Aguarde contato.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+    
+            <script>
+                document.getElementById('contact-btn').addEventListener('click', function() {
+                    document.getElementById('contact-form').style.display = 'block';
+                });
+                
+                document.getElementById('order-btn').addEventListener('click', function() {
+                    document.getElementById('order-form').style.display = 'block';
+                    document.getElementById('order-success').style.display = 'none';
+                });
+        
+                document.querySelector('#order-form form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    document.getElementById('order-form').style.display = 'none';
+                    document.getElementById('order-success').style.display = 'block';
+                });
+            </script>
+</body>
